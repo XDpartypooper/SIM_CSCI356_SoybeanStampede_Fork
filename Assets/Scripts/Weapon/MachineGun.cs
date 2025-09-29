@@ -18,15 +18,15 @@ public class MachineGun : MonoBehaviour, IGun
     [SerializeField]
     private string gun_name = "Stryfe Flywheel Blaster";
     [SerializeField]
-    private int dmg = 1;
+    public int dmg = 1;
     [SerializeField]
-    private int mag = 10;
+    public int mag = 10;
     [SerializeField]
-    private int cap = 30;
+    public int cap = 30;
     [SerializeField]
-    private float interval = 0.2f;
+    public float interval = 0.2f;
     [SerializeField]
-    private float projectileSpeed = 30f;
+    public float projectileSpeed = 30f;
     [Header("References")]
     [SerializeField]
     private GameObject projectilePrefab;
@@ -59,6 +59,10 @@ public class MachineGun : MonoBehaviour, IGun
     // Update is called once per frame
     void Update()
     {
+        damage = dmg;
+        fireInterval = interval;
+        magazine = mag;
+
         fireCD += Time.deltaTime;
         fireCD = Mathf.Clamp(fireCD, 0.0f, fireInterval);
 
@@ -117,6 +121,7 @@ public class MachineGun : MonoBehaviour, IGun
 
     public void Reload()
     {
+        if (ammo >= capacity) return;
         if (magazine <= 0) return;
         SoundSource.PlayOneShot(ReloadSound);
         animator.SetBool("ReloadStryfe", true);

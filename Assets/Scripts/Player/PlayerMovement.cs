@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float gravity = -9.8f;
     [SerializeField]
-    private float jumpHeight = 2.0f;
+    private float jumpHeight = 3.0f;
 
     [SerializeField]
     private Animator animator;

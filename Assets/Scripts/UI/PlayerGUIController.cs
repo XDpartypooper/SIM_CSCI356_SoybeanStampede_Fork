@@ -16,6 +16,8 @@ public class PlayerGUIController : MonoBehaviour
     [SerializeField]
     private Slider healthBar;
     [SerializeField]
+    private Slider ExpBar;
+    [SerializeField]
     private TMP_Text weaponName;
     [SerializeField]
     private TMP_Text ammoCount;
@@ -50,8 +52,11 @@ public class PlayerGUIController : MonoBehaviour
         }
 
         if (playerState != null)
-        {
-            healthBar.value = (float)playerState.CurrHeath / (float)playerState.MaxHealth;
+        {      
+            healthBar.value = (float)playerState.CurrHeath / (float)playerState.MaxHealth;        
+            ExpBar.value = (float)playerState.CurrExp / (float)playerState.MaxExp;
         }
+
+     
     }
 }

@@ -18,15 +18,15 @@ public class Pistol : MonoBehaviour, IGun
     [SerializeField]
     private string gun_name = "Magnus Mega Blaster";
     [SerializeField]
-    private int dmg = 1;
+    public int dmg = 1;
     [SerializeField]
-    private int mag = 10;
+    public int mag = 10;
     [SerializeField]
-    private int cap = 12;
+    public int cap = 12;
     [SerializeField]
-    private float interval = 0.5f;
+    public float interval = 0.5f;
     [SerializeField]
-    private float projectileSpeed = 20f;
+    public float projectileSpeed = 20f;
     [Header("References")]
     [SerializeField]
     private GameObject projectilePrefab;
@@ -60,6 +60,11 @@ public class Pistol : MonoBehaviour, IGun
     // Update is called once per frame
     void Update()
     {
+        damage = dmg;
+        fireInterval = interval;
+        magazine = mag;
+     
+
         fireCD += Time.deltaTime;
         fireCD = Mathf.Clamp(fireCD, 0.0f, fireInterval);
  
@@ -108,6 +113,8 @@ public class Pistol : MonoBehaviour, IGun
         Projectile projectile = bullet.GetComponent<Projectile>();
         if (projectile != null)
         {
+       
+
             projectile.damage = damage;
             projectile.isShotBy = "Player";
         }
@@ -119,6 +126,7 @@ public class Pistol : MonoBehaviour, IGun
 
     public void Reload()
     {
+        if (ammo >= capacity) return;
         if (magazine <= 0) return;
 
         if(animator != null)

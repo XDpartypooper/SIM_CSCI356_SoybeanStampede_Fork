@@ -5,10 +5,12 @@ using UnityEngine;
 public class RocketProjectile : MonoBehaviour
 {
     [SerializeField]
-    private float lifeTime = 3f;
+    private float lifeTime = 1.5f;
 
     public int damage { private get; set; }
     public string isShotBy { private get; set; }
+
+    public GameObject EX;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +26,16 @@ public class RocketProjectile : MonoBehaviour
         if (lifeTime <= 0)
         {
             Destroy(gameObject);
+            Instantiate(EX, transform.position, transform.rotation);//cosmetic
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+      
         if (collision.transform.tag == "Enemy" && isShotBy == "Player")
         {
+            Instantiate(EX, transform.position, transform.rotation);
             // get the GameObjects that was hit
             Collider[] hitObjects = Physics.OverlapSphere(collision.transform.position, 5f);
 
@@ -44,9 +49,9 @@ public class RocketProjectile : MonoBehaviour
                     target.Damage(damage);
                 }
             }
-
             Destroy(gameObject);
         }
+
     }
 
     private void OnDestroy()

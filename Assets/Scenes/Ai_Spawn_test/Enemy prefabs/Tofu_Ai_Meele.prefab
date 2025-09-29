@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8407058253826569700}
   - component: {fileID: 1284990585504914768}
   - component: {fileID: 3948491844107450689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2640456460735917005}
   - component: {fileID: 9112161007985050498}
   - component: {fileID: 1401249543954017897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 2157497468768837813}
   - component: {fileID: 2554614326755602550}
   - component: {fileID: 7406947655306495746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 2868386519132282693}
   - component: {fileID: 6639092889356768493}
   - component: {fileID: 8090139225374761517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tofu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 5372691412261747471}
   - component: {fileID: 6556212675639782849}
   - component: {fileID: 3315043370112369995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tofu_Ai_Meele
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -478,6 +478,8 @@ MonoBehaviour:
   AttackRange: 1.7
   dmg: 4
   IsAttacking: 0
+  EXP: 5
+  dead: 0
   Ranged: 0
   projectilePrefab: {fileID: 0}
   animator: {fileID: 0}

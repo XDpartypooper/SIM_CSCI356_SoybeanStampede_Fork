@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7884332550376270901}
   - component: {fileID: 1432161707866626772}
   - component: {fileID: 8766955437206321921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6568012925256300578}
   - component: {fileID: 796596675378319519}
   - component: {fileID: 4631495553042465512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 7238524678419585843}
   - component: {fileID: 3393095260989090000}
   - component: {fileID: 6907799253493360281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 9030710400661411476}
   - component: {fileID: 3571534080028185890}
   - component: {fileID: 6908497522156465163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tofu_Ai_Ranged
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -372,6 +372,8 @@ MonoBehaviour:
   AttackRange: 7.5
   dmg: 4
   IsAttacking: 0
+  EXP: 5
+  dead: 0
   Ranged: 1
   projectilePrefab: {fileID: 6505825402928849045, guid: afa5ed11c2e467347b2401b153469648, type: 3}
   animator: {fileID: 0}
@@ -535,7 +537,7 @@ GameObject:
   - component: {fileID: 9066551174839164867}
   - component: {fileID: 3794110806747635159}
   - component: {fileID: 3501093852937691588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tofu
   m_TagString: Untagged
   m_Icon: {fileID: 0}

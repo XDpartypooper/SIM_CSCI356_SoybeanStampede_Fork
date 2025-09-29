@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using UnityEngine.Playables;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInteract))]
 public class PlayerStateController : MonoBehaviour
 {
     public int CurrHeath;  //player current hp
-
     public int MaxHealth = 50;      //player max hp
+    public int CurrentLV = 0;
+
+    public int CurrExp =0;
+    public int MaxExp = 50;
 
     private PlayerInteract playerControls;
     private PlayerMovement playerMovement;
+    public GameObject GSC;
 
     private float modeToggleCD = 0.0f;
 
@@ -20,6 +25,7 @@ public class PlayerStateController : MonoBehaviour
     void Start()
     {
         CurrHeath = MaxHealth;//set the current hp to MaxHp
+        
 
         playerControls = GetComponent<PlayerInteract>();
         playerMovement = GetComponent<PlayerMovement>();
@@ -41,6 +47,12 @@ public class PlayerStateController : MonoBehaviour
         }
 
         modeToggleCD += Time.deltaTime;
+
+
+        if (Input.GetKeyDown(KeyCode.L))//debug for buffs also to cheat
+        {
+            ExpUpdate(60);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -88,6 +100,24 @@ public class PlayerStateController : MonoBehaviour
             //animator.SetTrigger("Damage");
         }
     }
+
+
+
+    public void ExpUpdate(int xp)
+    {
+        CurrExp = CurrExp + xp;
+
+        if (CurrExp >= MaxExp)
+        {
+            CurrExp = CurrExp - MaxExp;
+            CurrentLV++;
+     
+            GameStateContoller s2 = GSC.GetComponent<GameStateContoller>();
+
+            s2.LVUP();
+        }
+    }
+
     public void Heal(int Heal)
     {
         if (CurrHeath >= MaxHealth) return;//Does nth if Hp is full
