@@ -107,8 +107,7 @@ public class GameStateContoller : MonoBehaviour
 
     }
 
-    //Choice1
-
+ 
     public void Choice(GameObject choice)
     {
 

@@ -9,7 +9,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField]
-    private float rotationSpeed = 6f;
+    private float rotationSpeed = 4.5f;
     [SerializeField]
     private float maxPitch = 45f;
     [SerializeField]

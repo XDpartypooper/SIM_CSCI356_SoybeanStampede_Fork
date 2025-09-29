@@ -92,9 +92,6 @@ public class PlayerMovement : MonoBehaviour
        
         // pass the movement data to character controller
         characterController.Move((moveDir.normalized * moveSpeed + jumpForce) * Time.deltaTime);
-       
-      
-     
     }
 
     public void ToggleFPSControls(bool isFPS)

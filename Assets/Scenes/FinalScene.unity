@@ -98850,6 +98850,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8499961027767190380, guid: cf167482be99aa24d9d50bce62acfeb6, type: 3}
+      propertyPath: rotationSpeed
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499961027767190380, guid: cf167482be99aa24d9d50bce62acfeb6, type: 3}
       propertyPath: includedLayer.m_Bits
       value: 14
       objectReference: {fileID: 0}

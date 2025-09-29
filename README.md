@@ -1,6 +1,10 @@
 # SIM_CSCI356_SoybeanStampede
  SIM 2023 CSCI356 group assignment
 
+ SoybeanStampede_ReBeaned 
+ a updated version by me from the base game 
+ with added features and fix some bugs _
+
 Game playthrough 
 https://youtu.be/vcqxtsBUaS8?si=bFPfo9cAqEY00N1B
 
