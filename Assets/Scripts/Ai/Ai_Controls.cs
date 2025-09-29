@@ -22,7 +22,9 @@ public class Ai_Controls : MonoBehaviour
     public float AttackRange = 5;//The Range enemy Attack distance
     public int dmg = 1;
     public bool IsAttacking;
- 
+    public int EXP = 5;//enemy speed (change the mesh agent's speed)
+    public int dead = 0;
+
     //ranged settings
     public bool Ranged;// tick to set enemy to ranged type
     private float projectileSpeed = 20f;
@@ -92,17 +94,13 @@ public class Ai_Controls : MonoBehaviour
 
         if(distanceBetweenObjects < agent.stoppingDistance)
         {
-
-            //FOR Ranged Attacker
-           
+            //FOR Ranged Attacker        
             Attack();
         }
         else if (distanceBetweenObjects <= AttackRange && Ranged != true )
         {
             //for Meele enemies  
-
-            Attack();
-            
+            Attack();         
         }
         else//move
         {
@@ -215,14 +213,20 @@ public class Ai_Controls : MonoBehaviour
 
     void Death()
     {
-        animator.enabled = false; //disable
-        SetRigidBody(false);        //Make enemy kinamatic 
-        agent.enabled = false;      //stops the ai system
-                                    
-        GameStateContoller Score = FindObjectOfType<GameStateContoller>();
-        Score.ScoreUpdate();//Total kills++
+         if (dead == 0)
+        {
+            animator.enabled = false; //disable
+            SetRigidBody(false);        //Make enemy kinamatic 
+            agent.enabled = false;      //stops the ai system
+            dead = 1;
 
-        Destroy(this.gameObject, 5.0f);//destroy the current enemy 
+            GameStateContoller Score = FindObjectOfType<GameStateContoller>();
+            Score.ScoreUpdate();//Total kills++
+            PlayerStateController PlayerChar = player.GetComponent<PlayerStateController>();
+            PlayerChar.ExpUpdate(EXP);
+
+            Destroy(this.gameObject, 5.0f);//destroy the current enemy
+        }               
     }
 
     void SetRigidBody(bool State)

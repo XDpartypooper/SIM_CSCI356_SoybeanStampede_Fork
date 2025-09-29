@@ -18,13 +18,13 @@ public class RocketLauncher : MonoBehaviour, IGun
     [SerializeField]
     private string gun_name = "Nerf Fortnite RPG Blaster";
     [SerializeField]
-    private int dmg = 3;
+    public int dmg = 3;
     [SerializeField]
-    private int mag = 5;
+    public int mag = 5;
     [SerializeField]
-    private int cap = 2;
+    public int cap = 2;
     [SerializeField]
-    private float interval = 1.5f;
+    public float interval = 1.5f;
     [SerializeField]
     private float projectileSpeed = 40f;
     [Header("References")]
@@ -59,6 +59,10 @@ public class RocketLauncher : MonoBehaviour, IGun
     // Update is called once per frame
     void Update()
     {
+        damage = dmg;
+        fireInterval = interval;
+        magazine = mag;
+
         fireCD += Time.deltaTime;
         fireCD = Mathf.Clamp(fireCD, 0.0f, fireInterval);
 
@@ -111,6 +115,7 @@ public class RocketLauncher : MonoBehaviour, IGun
 
     public void Reload()
     {
+        if (ammo >= capacity) return;
         if (magazine <= 0) return;
         SoundSource.PlayOneShot(ReloadSound);
         animator.SetBool("ReloadRPG", true);
