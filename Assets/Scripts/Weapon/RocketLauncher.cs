@@ -61,7 +61,7 @@ public class RocketLauncher : MonoBehaviour, IGun
     {
         damage = dmg;
         fireInterval = interval;
-        magazine = mag;
+
 
         fireCD += Time.deltaTime;
         fireCD = Mathf.Clamp(fireCD, 0.0f, fireInterval);

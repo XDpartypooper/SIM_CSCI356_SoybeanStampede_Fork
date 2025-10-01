@@ -153,7 +153,7 @@ public class GameStateContoller : MonoBehaviour
                 return "Pistol Buff II \n \nIncrease Magnus Mega Blaster fire rate by 50%";
             case 3:
                 //Weapon1.mag = (int)(Weapon1.mag * 1.5);
-                return "Pistol Buff III \n \nIncrease Magnus Mega Blaster mag by 50%";
+                return "Pistol Buff III \n \n Gain 50% of starting mag for Magnus Mega Blaster";
             case 4:
                 //Stryfe Flywheel Blaster
                 //Weapon2.dmg = (int)(Weapon2.dmg * 1.5);
@@ -163,7 +163,7 @@ public class GameStateContoller : MonoBehaviour
                 return "SMG Buff II \n \nIncrease Stryfe Flywheel Blaster fire rate by 50%";
             case 6:
                 //Weapon2.mag = (int)(Weapon2.mag * 1.5);
-                return "SMG Buff II \n \nIncrease Stryfe Flywheel Blaster mag by 50%";
+                return "SMG Buff II \n \n Gain 50% of starting mag for Stryfe Flywheel Blaster";
             case 7:
                 //Nerf Fortnite RPG Blaster
                 //Weapon3.dmg = (int)(Weapon3.dmg * 1.5);
@@ -173,7 +173,7 @@ public class GameStateContoller : MonoBehaviour
                 return "RPG Buff II \n \nIncrease Nerf Fortnite RPG Blaster Fire rate by 50%";
             case 9:
                 //Weapon3.mag = (int)(Weapon3.mag * 1.5);
-                return "RPG Buff III \n \nIncrease Nerf Fortnite RPG Blaster Mag by 50%";
+                return "RPG Buff III \n \n Gain 50% of starting mag for Nerf Fortnite RPG Blaster";
             case 10:
                 //unReachable for now
                 //"Vampire /n Each kill recovers some HP"
@@ -198,8 +198,8 @@ public class GameStateContoller : MonoBehaviour
                 Weapon1.interval = Weapon1.interval / 1.5f;
                 break;//  "Pistol Buff II /n Increase Magnus Mega Blaster fire rate by 50%";
             case 3:
-                Weapon1.mag = (int)(Weapon1.mag * 1.5);
-                break;//  "Pistol Buff III /n Increase Magnus Mega Blaster mag by 50%";
+                Weapon1.AddMagazine((int)(Weapon1.mag * 1.5));
+                break;//  "Pistol Buff III /n Gain 50% of starting mag for Magnus Mega Blaster";
             case 4:
                 //Stryfe Flywheel Blaster
                 Weapon2.dmg = (int)(Weapon2.dmg * 1.5);
@@ -208,18 +208,19 @@ public class GameStateContoller : MonoBehaviour
                 Weapon2.interval = Weapon2.interval / 1.5f;
                 break;//  "SMG Buff II /n Increase Stryfe Flywheel Blaster fire rate by 50%";
             case 6:
-                Weapon2.mag = (int)(Weapon2.mag * 1.5);
-                break;//  "SMG Buff II /n Increase Stryfe Flywheel Blaster mag by 50%";
+                Weapon2.AddMagazine((int)(Weapon2.mag * 1.5));
+                break;//  "SMG Buff II /n Gain 50% of starting mag forStryfe Flywheel Blaster";
             case 7:
                 //Nerf Fortnite RPG Blaster
                 Weapon3.dmg = (int)(Weapon3.dmg * 1.5);
                 break;//  "RPG Buff I /n Increase Nerf Fortnite RPG Blaster damage by 50%";
             case 8:
                 Weapon3.interval = Weapon3.interval / 1.5f;
+               
                 break;//  "RPG Buff II /n Increase Nerf Fortnite RPG Blaster fire rate by 50%";
             case 9:
-                Weapon3.mag = (int)(Weapon3.mag * 1.5);
-                break;//  "RPG Buff III /n Increase Nerf Fortnite RPG Blaster mag by 50%";
+                Weapon3.AddMagazine((int)(Weapon3.mag * 1.5));
+                break;//  "RPG Buff III /n Gain 50% of starting mag for Nerf Fortnite RPG Blaster";
             case 10:
                 //unReachable for now
                 //"Vampire /n Each kill recovers some HP"

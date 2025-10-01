@@ -62,7 +62,7 @@ public class Pistol : MonoBehaviour, IGun
     {
         damage = dmg;
         fireInterval = interval;
-        magazine = mag;
+       
      
 
         fireCD += Time.deltaTime;
